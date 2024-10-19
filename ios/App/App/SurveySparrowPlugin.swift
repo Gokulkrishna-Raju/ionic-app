@@ -5,27 +5,109 @@
 //  Created by Gokulkrishna Raju on 19/10/24.
 //
 
-import SurveySparrowSdk
+import UIKit
 import Capacitor
+import SurveySparrowSdk
 
 @objc(SurveySparrowPlugin)
 public class SurveySparrowPlugin: CAPPlugin {
     
-    var svc: SubViewController!
+    var ssSurveyView: SsSurveyView?
+    
+    var domain: String = "<account-domain>"
+    var token: String = "<sdk-token>"
+    var sparrowLang: String = "<your-preferred-language-code>"
+    var params: [String:String] = ["emailaddress": "email@email.com", "email": "email@email.com"]
     
     override init() {
-        self.svc = SubViewController()
         super.init()
+        self.initializeSurveyView()
     }
-
-    @objc public func loadFullScreenSurvey(_ call: CAPPluginCall) {
-        DispatchQueue.global().async {
-            let domain = call.getString("domain") ?? ""
-            let token = call.getString("token") ?? ""
-            let sparrowLang = call.getString("sparrowLang") ?? ""
-            print("domainName -> \(domain) targetToken -> targetToken \(token).")
-            self.svc.loadFullscreenSurvey(domain: domain, token: token, sparrowLang: sparrowLang)
-            call.resolve()
+    
+    private func initializeSurveyView() {
+        DispatchQueue.main.async {
+            if self.ssSurveyView == nil {
+                self.ssSurveyView = SsSurveyView()
+                print("ssSurveyView initialized")
+            }
         }
+    }
+    
+    @objc public func loadFullScreenSurvey(_ call: CAPPluginCall) {
+        let domain = call.getString("domain") ?? self.domain
+        let token = call.getString("token") ?? self.token
+        let sparrowLang = call.getString("sparrowLang") ?? self.sparrowLang
+        let params = call.getObject("params") as? [String: String] ?? self.params
+
+        self.domain = domain
+        self.token = token
+        self.sparrowLang = sparrowLang
+        self.params = params
+        
+        DispatchQueue.main.async {
+            let ssSurveyViewController = SsSurveyViewController()
+            ssSurveyViewController.domain = domain
+            ssSurveyViewController.token = token
+            ssSurveyViewController.sparrowLang = sparrowLang
+            ssSurveyViewController.modalPresentationStyle = .fullScreen
+            ssSurveyViewController.params = params
+            ssSurveyViewController.getSurveyLoadedResponse = true
+            ssSurveyViewController.surveyDelegate = SsDelegate()
+            if let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+                rootViewController.present(ssSurveyViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @objc public func loadFullScreenSurveyWithValidation(_ call: CAPPluginCall) {
+        let domain = call.getString("domain") ?? self.domain
+        let token = call.getString("token") ?? self.token
+        let sparrowLang = call.getString("sparrowLang") ?? self.sparrowLang
+        let params = call.getObject("params") as? [String: String] ?? self.params
+
+        self.domain = domain
+        self.token = token
+        self.sparrowLang = sparrowLang
+        self.params = params
+        
+        DispatchQueue.main.async {
+            if let ssSurveyView = self.ssSurveyView {
+                if let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+                    ssSurveyView.loadFullscreenSurvey(
+                        parent: rootViewController,
+                        delegate: SsDelegate(),
+                        domain: domain,
+                        token: token,
+                        params: params,
+                        sparrowLang: sparrowLang
+                    )
+                    call.resolve()
+                } else {
+                    print("Error: Unable to find rootViewController")
+                    call.reject("Unable to find rootViewController")
+                }
+            } else {
+                print("Error: ssSurveyView is not initialized")
+                call.reject("ssSurveyView is not initialized")
+            }
+        }
+    }
+}
+
+class SsDelegate: SsSurveyDelegate {
+    public func handleSurveyResponse(response: [String: AnyObject]) {
+        print(response)
+    }
+    
+    public func handleSurveyLoaded(response: [String: AnyObject]) {
+        print(response)
+    }
+    
+    public func handleSurveyValidation(response: [String: AnyObject]) {
+        print(response)
+    }
+    
+    public func handleCloseButtonTap() {
+        print("CloseButtonTapped")
     }
 }

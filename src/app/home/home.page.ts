@@ -10,12 +10,28 @@ import SurveySparrowPlugin from '../SurveySparrowPlugin/SurveySparrow';
 export class HomePage {
 
   constructor(private platform: Platform) { 
-    this.platform.ready().then(() => { 
-      SurveySparrowPlugin.loadFullScreenSurvey({
-        domain: "gokulkrishnaraju1183.surveysparrow.com",
-        token: "tt-DKLvmYD7iby"
-      });
+    this.platform.ready().then(() => {});
+  }
+
+  loadSurvey() {
+    SurveySparrowPlugin.loadFullScreenSurvey({
+      domain: "gokulkrishnaraju1183.surveysparrow.com",
+      token: "tt-DKLvmYD7iby"
+    }).then(() => {
+      console.log('Survey loaded successfully');
+    }).catch((error) => {
+      console.error('Error loading survey:', error);
     });
   }
 
+  loadSurveyWithValidation() {
+    SurveySparrowPlugin.loadFullScreenSurveyWithValidation({
+      domain: "gokulkrishnaraju1183.surveysparrow.com",
+      token: "tt-DKLvmYD7iby"
+    }).then(() => {
+      console.log('Survey loaded successfully');
+    }).catch((error) => {
+      console.error('Error loading survey:', error);
+    });
+  }
 }

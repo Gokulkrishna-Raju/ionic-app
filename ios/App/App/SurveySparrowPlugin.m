@@ -10,4 +10,5 @@
 
 CAP_PLUGIN(SurveySparrowPlugin, "SurveySparrowPlugin",
     CAP_PLUGIN_METHOD(loadFullScreenSurvey, CAPPluginReturnPromise);
+    CAP_PLUGIN_METHOD(loadFullScreenSurveyWithValidation, CAPPluginReturnPromise);
 );

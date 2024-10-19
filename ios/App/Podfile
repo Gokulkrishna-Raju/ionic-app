@@ -8,7 +8,7 @@ use_frameworks!
 # Requires CocoaPods 1.6 or newer
 install! 'cocoapods', :disable_input_output_paths => true
 
-pod 'SurveySparrowSdk', :git => 'https://github.com/surveysparrow/surveysparrow-ios-sdk.git', :tag => '0.5.0'
+pod 'SurveySparrowSdk', :git => 'https://github.com/surveysparrow/surveysparrow-ios-sdk.git', :tag => '0.5.1'
 
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
