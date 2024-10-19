@@ -33,6 +33,23 @@ public class SurveySparrowPlugin: CAPPlugin {
         }
     }
     
+    @objc public func loadEmbeddedSurvey(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            if let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EmbedSurveyController") as? EmbedSurveyController {
+                
+                surveyVC.domain = call.getString("domain")
+                surveyVC.token = call.getString("token")
+                surveyVC.sparrowLang = call.getString("sparrowLang")
+                surveyVC.modalPresentationStyle = .overFullScreen
+                self.bridge?.viewController?.present(surveyVC, animated: false, completion: nil)
+                
+                call.resolve()
+            } else {
+                call.reject("Unable to load SurveyViewController")
+            }
+        }
+    }
+    
     @objc public func loadFullScreenSurvey(_ call: CAPPluginCall) {
         let domain = call.getString("domain") ?? self.domain
         let token = call.getString("token") ?? self.token

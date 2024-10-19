@@ -13,6 +13,17 @@ export class HomePage {
     this.platform.ready().then(() => {});
   }
 
+  embedSurvey() {
+    SurveySparrowPlugin.loadEmbeddedSurvey({
+      domain: "gokulkrishnaraju1183.surveysparrow.com",
+      token: "tt-DKLvmYD7iby"
+    }).then(() => {
+      console.log('Survey loaded successfully');
+    }).catch((error) => {
+      console.error('Error loading survey:', error);
+    });
+  }
+
   loadSurvey() {
     SurveySparrowPlugin.loadFullScreenSurvey({
       domain: "gokulkrishnaraju1183.surveysparrow.com",

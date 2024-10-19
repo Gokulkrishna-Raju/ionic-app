@@ -16,6 +16,7 @@
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		700443F92CC39C5A00F9518F /* SurveySparrowPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700443F82CC39C5A00F9518F /* SurveySparrowPlugin.swift */; };
 		700443FC2CC39DEE00F9518F /* SurveySparrowPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 700443FB2CC39DEE00F9518F /* SurveySparrowPlugin.m */; };
+		700443FE2CC3E58700F9518F /* EmbedSurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700443FD2CC3E58700F9518F /* EmbedSurveyController.swift */; };
 		A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		700443F82CC39C5A00F9518F /* SurveySparrowPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySparrowPlugin.swift; sourceTree = "<group>"; };
 		700443FA2CC39DEE00F9518F /* App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
 		700443FB2CC39DEE00F9518F /* SurveySparrowPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SurveySparrowPlugin.m; sourceTree = "<group>"; };
+		700443FD2CC3E58700F9518F /* EmbedSurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedSurveyController.swift; sourceTree = "<group>"; };
 		AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF51FD2D460BCFE21FA515B2 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 		FC68EB0AF532CFC21C3344DD /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				700443F82CC39C5A00F9518F /* SurveySparrowPlugin.swift */,
 				700443FB2CC39DEE00F9518F /* SurveySparrowPlugin.m */,
 				700443FA2CC39DEE00F9518F /* App-Bridging-Header.h */,
+				700443FD2CC3E58700F9518F /* EmbedSurveyController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700443F92CC39C5A00F9518F /* SurveySparrowPlugin.swift in Sources */,
+				700443FE2CC3E58700F9518F /* EmbedSurveyController.swift in Sources */,
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
 				700443FC2CC39DEE00F9518F /* SurveySparrowPlugin.m in Sources */,
 			);

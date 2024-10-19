@@ -15,17 +15,17 @@
 
   <div id="container">
 
-    <ion-button (click)="loadSurveyWithValidation()" class="custom-button">
+    <ion-button (click)="embedSurvey()" class="custom-button">
       <div class="button-content">
         <div class="button-text">
-          Load FullScreen Survey with Validation
+          Load Embed Survey
         </div>
         <div class="button-subtext">
-          rootViewController.present(ssSurveyViewController)
+          ssSurveyView.loadEmbedSurvey
         </div>
       </div>
     </ion-button>
-
+    
     <ion-button (click)="loadSurvey()" class="custom-button">
       <div class="button-content">
         <div class="button-text">
@@ -33,6 +33,17 @@
         </div>
         <div class="button-subtext">
           ssSurveyView.loadFullscreenSurvey
+        </div>
+      </div>
+    </ion-button>
+
+    <ion-button (click)="loadSurveyWithValidation()" class="custom-button">
+      <div class="button-content">
+        <div class="button-text">
+          Load FullScreen Survey with Validation
+        </div>
+        <div class="button-subtext">
+          rootViewController.present(ssSurveyViewController)
         </div>
       </div>
     </ion-button>

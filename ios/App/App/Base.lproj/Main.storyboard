@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Bridge View Controller-->
@@ -13,6 +14,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="-36"/>
+        </scene>
+        <!--Embed Survey Controller-->
+        <scene sceneID="iIL-7E-yhN">
+            <objects>
+                <viewController storyboardIdentifier="EmbedSurveyController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xlB-2U-ZbZ" customClass="EmbedSurveyController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qQy-X7-ep3"/>
+                        <viewControllerLayoutGuide type="bottom" id="s5e-i9-ZA2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gbO-Q9-w0f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-p0-lID" customClass="SsSurveyView" customModule="SurveySparrowSdk">
+                                <rect key="frame" x="0.0" y="259" width="375" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="6mj-WW-lR4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1Kz-p0-lID" secondAttribute="trailing" id="6UO-sb-qsV"/>
+                            <constraint firstItem="1Kz-p0-lID" firstAttribute="leading" secondItem="gbO-Q9-w0f" secondAttribute="leading" id="aOz-fP-6WB"/>
+                            <constraint firstItem="s5e-i9-ZA2" firstAttribute="top" secondItem="1Kz-p0-lID" secondAttribute="bottom" constant="8" id="c1C-uQ-zBe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ssSurveyView" destination="1Kz-p0-lID" id="GjF-qF-uXa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHR-xn-f7R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909.60000000000002" y="-36.431784107946029"/>
         </scene>
     </scenes>
 </document>
