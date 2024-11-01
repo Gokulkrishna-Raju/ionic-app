@@ -15,8 +15,8 @@ export class HomePage {
 
   embedSurvey() {
     SurveySparrowPlugin.loadEmbeddedSurvey({
-      domain: "gokulkrishnaraju1183.surveysparrow.com",
-      token: "tt-DKLvmYD7iby"
+      domain: "DOMAIN",
+      token: "TOKEN"
     }).then(() => {
       console.log('Survey loaded successfully');
     }).catch((error) => {
@@ -26,8 +26,8 @@ export class HomePage {
 
   loadSurvey() {
     SurveySparrowPlugin.loadFullScreenSurvey({
-      domain: "gokulkrishnaraju1183.surveysparrow.com",
-      token: "tt-DKLvmYD7iby"
+      domain: "DOMAIN",
+      token: "TOKEN"
     }).then(() => {
       console.log('Survey loaded successfully');
     }).catch((error) => {
@@ -37,8 +37,8 @@ export class HomePage {
 
   loadSurveyWithValidation() {
     SurveySparrowPlugin.loadFullScreenSurveyWithValidation({
-      domain: "gokulkrishnaraju1183.surveysparrow.com",
-      token: "tt-DKLvmYD7iby"
+      domain: "DOMAIN",
+      token: "TOKEN"
     }).then(() => {
       console.log('Survey loaded successfully');
     }).catch((error) => {
