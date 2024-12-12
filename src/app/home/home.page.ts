@@ -7,27 +7,20 @@ import SurveySparrowPlugin from '../SurveySparrowPlugin/SurveySparrow';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
   constructor(private platform: Platform) { 
     this.platform.ready().then(() => {});
   }
 
-  embedSurvey() {
-    SurveySparrowPlugin.loadEmbeddedSurvey({
-      domain: "DOMAIN",
-      token: "TOKEN"
-    }).then(() => {
-      console.log('Survey loaded successfully');
-    }).catch((error) => {
-      console.error('Error loading survey:', error);
-    });
-  }
-
   loadSurvey() {
+    let domain = "<account-domain>";
+    let token = "<sdk-token>";
+    
     SurveySparrowPlugin.loadFullScreenSurvey({
-      domain: "DOMAIN",
-      token: "TOKEN"
+      domain,
+      token
     }).then(() => {
       console.log('Survey loaded successfully');
     }).catch((error) => {
@@ -36,9 +29,12 @@ export class HomePage {
   }
 
   loadSurveyWithValidation() {
+    let domain = "<account-domain>";
+    let token = "<sdk-token>";
+
     SurveySparrowPlugin.loadFullScreenSurveyWithValidation({
-      domain: "DOMAIN",
-      token: "TOKEN"
+      domain,
+      token
     }).then(() => {
       console.log('Survey loaded successfully');
     }).catch((error) => {

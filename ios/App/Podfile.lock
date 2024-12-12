@@ -10,7 +10,7 @@ PODS:
     - Capacitor
   - CapacitorStatusBar (6.0.1):
     - Capacitor
-  - SurveySparrowSdk (0.5.0)
+  - SurveySparrowSdk (0.5.2)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
-  - SurveySparrowSdk (from `https://github.com/surveysparrow/surveysparrow-ios-sdk.git`, tag `0.5.1`)
+  - SurveySparrowSdk (from `https://github.com/surveysparrow/surveysparrow-ios-sdk.git`, tag `0.5.2`)
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -36,12 +36,12 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/status-bar"
   SurveySparrowSdk:
     :git: https://github.com/surveysparrow/surveysparrow-ios-sdk.git
-    :tag: 0.5.1
+    :tag: 0.5.2
 
 CHECKOUT OPTIONS:
   SurveySparrowSdk:
     :git: https://github.com/surveysparrow/surveysparrow-ios-sdk.git
-    :tag: 0.5.1
+    :tag: 0.5.2
 
 SPEC CHECKSUMS:
   Capacitor: 679f9673fdf30597493a6362a5d5bf233d46abc2
@@ -50,8 +50,8 @@ SPEC CHECKSUMS:
   CapacitorHaptics: fe689ade56ef20ec9b041a753c6da70c5d8ec9a9
   CapacitorKeyboard: 2700f9b18687be021e28b5a09b59eb151a46d5e0
   CapacitorStatusBar: b81d4fb5d4e0064c712018071b3ab4b810b39a63
-  SurveySparrowSdk: b6467d6909cb67a10cdc45d1bb2bf17f58794253
+  SurveySparrowSdk: 2bdae7ff40a8bfe84dcb0e00b7eba060f1a51a6b
 
-PODFILE CHECKSUM: 275c8896a1dae7abe3ec025204032553ed7168d0
+PODFILE CHECKSUM: 424dd6f9c94b0ac7977eac97bbb2d876a22b1506
 
 COCOAPODS: 1.15.2
